@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { MotiView } from 'moti';
 import { useRouter } from 'expo-router';
-import { BlurView } from 'expo-blur';
 import RoleSelector, { Role } from '../../components/RoleSelector';
 import MobileNumberInput from '../../components/MobileNumberInput';
 import ContinueButton from '../../components/ContinueButton';
@@ -50,37 +48,6 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={['#0a0e1f', '#1a1535', '#2d1b4e', '#1a1535', '#0a0e1f']}
-        style={styles.gradient}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      />
-
-      <MotiView
-        from={{ opacity: 0.6 }}
-        animate={{ opacity: 0.8 }}
-        transition={{
-          type: 'timing',
-          duration: 12000,
-          loop: true,
-          repeatReverse: true,
-        }}
-        style={styles.gradientOverlay}
-      >
-        <LinearGradient
-          colors={['rgba(138, 102, 208, 0.12)', 'rgba(100, 80, 180, 0.08)', 'rgba(72, 61, 139, 0.06)']}
-          style={styles.gradientOverlayInner}
-          start={{ x: 0.2, y: 0.2 }}
-          end={{ x: 0.8, y: 0.8 }}
-        />
-      </MotiView>
-
-      <View style={styles.blurLayerWrapper}>
-        <View style={styles.blurLayer1} />
-        <View style={styles.blurLayer2} />
-        <View style={styles.blurLayer3} />
-      </View>
 
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -96,8 +63,8 @@ export default function LoginScreen() {
             animate={{ opacity: 1, translateY: 0 }}
             transition={{
               type: 'timing',
-              duration: 800,
-              delay: 200,
+              duration: 600,
+              delay: 100,
             }}
             style={styles.header}
           >
@@ -108,51 +75,46 @@ export default function LoginScreen() {
           </MotiView>
 
           <MotiView
-            from={{ opacity: 0, translateY: 30 }}
+            from={{ opacity: 0, translateY: 20 }}
             animate={{ opacity: 1, translateY: 0 }}
             transition={{
               type: 'timing',
-              duration: 700,
-              delay: 500,
+              duration: 600,
+              delay: 300,
             }}
             style={styles.cardWrapper}
           >
-            <View style={styles.cardShadow} />
-            <BlurView intensity={20} tint="dark" style={styles.glassCard}>
-              <View style={styles.cardBorder}>
-                <View style={styles.cardContent}>
-                  <RoleSelector selectedRole={selectedRole} onSelectRole={setSelectedRole} />
+            <View style={styles.card}>
+              <RoleSelector selectedRole={selectedRole} onSelectRole={setSelectedRole} />
 
-                  <MobileNumberInput
-                    value={phone}
-                    onChangeText={setPhone}
-                    error={error}
-                    onSubmit={handleContinue}
-                  />
+              <MobileNumberInput
+                value={phone}
+                onChangeText={setPhone}
+                error={error}
+                onSubmit={handleContinue}
+              />
 
-                  <ContinueButton
-                    onPress={handleContinue}
-                    disabled={!isPhoneValid}
-                    loading={loading}
-                  />
-                </View>
-              </View>
-            </BlurView>
+              <ContinueButton
+                onPress={handleContinue}
+                disabled={!isPhoneValid}
+                loading={loading}
+              />
+            </View>
           </MotiView>
 
           <MotiView
             from={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 900, duration: 600 }}
+            transition={{ delay: 600, duration: 500 }}
             style={styles.footer}
           >
-            <TouchableOpacity activeOpacity={0.6}>
+            <TouchableOpacity activeOpacity={0.7}>
               <Text style={styles.footerLink} allowFontScaling={false}>
                 New here? <Text style={styles.footerLinkBold}>Create an account</Text>
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.6} style={styles.helpButton}>
+            <TouchableOpacity activeOpacity={0.7} style={styles.helpButton}>
               <Text style={styles.helpText} allowFontScaling={false}>Need help?</Text>
             </TouchableOpacity>
           </MotiView>
@@ -165,154 +127,76 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a0e1f',
-  },
-  gradient: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-  },
-  gradientOverlay: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-  },
-  gradientOverlayInner: {
-    flex: 1,
-  },
-  blurLayerWrapper: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    pointerEvents: 'none',
-  },
-  blurLayer1: {
-    position: 'absolute',
-    width: 400,
-    height: 400,
-    borderRadius: 200,
-    backgroundColor: 'rgba(183, 148, 246, 0.08)',
-    top: -100,
-    left: -100,
-  },
-  blurLayer2: {
-    position: 'absolute',
-    width: 300,
-    height: 300,
-    borderRadius: 150,
-    backgroundColor: 'rgba(100, 80, 180, 0.06)',
-    bottom: -50,
-    right: -50,
-  },
-  blurLayer3: {
-    position: 'absolute',
-    width: 250,
-    height: 250,
-    borderRadius: 125,
-    backgroundColor: 'rgba(138, 102, 208, 0.05)',
-    top: '50%',
-    left: '50%',
-    marginLeft: -125,
-    marginTop: -125,
+    backgroundColor: '#F8FAFB',
   },
   keyboardView: {
     flex: 1,
   },
   scrollContent: {
     flexGrow: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
     paddingTop: 60,
     paddingBottom: 40,
   },
   header: {
     alignItems: 'center',
-    marginBottom: 52,
+    marginBottom: 48,
   },
   appName: {
-    fontSize: 32,
+    fontSize: 28,
     fontFamily: 'PlusJakarta-Bold',
-    color: '#FFFFFF',
-    marginTop: 28,
-    marginBottom: 12,
-    letterSpacing: -0.8,
+    color: '#1A1D29',
+    marginTop: 24,
+    marginBottom: 8,
+    letterSpacing: -0.6,
   },
   tagline: {
-    fontSize: 15,
+    fontSize: 14,
     fontFamily: 'Inter-Regular',
-    color: 'rgba(255, 255, 255, 0.65)',
+    color: '#6B7280',
     textAlign: 'center',
-    letterSpacing: -0.3,
-    lineHeight: 24,
+    letterSpacing: -0.2,
+    lineHeight: 22,
   },
   cardWrapper: {
     width: '100%',
-    marginBottom: 44,
+    marginBottom: 32,
   },
-  cardShadow: {
-    position: 'absolute',
-    top: 0,
-    left: -12,
-    right: -12,
-    bottom: -12,
-    backgroundColor: 'rgba(138, 102, 208, 0.25)',
-    borderRadius: 36,
-    shadowColor: '#8a66d0',
-    shadowOffset: { width: 0, height: 32 },
-    shadowOpacity: 0.45,
-    shadowRadius: 48,
-    elevation: 25,
-  },
-  glassCard: {
-    borderRadius: 32,
-    overflow: 'hidden',
-    backgroundColor: 'rgba(255, 255, 255, 0.06)',
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.15)',
-  },
-  cardBorder: {
-    borderWidth: 1,
-    borderColor: 'rgba(183, 148, 246, 0.25)',
-    borderRadius: 32,
-    padding: 1.5,
-  },
-  cardContent: {
-    paddingHorizontal: 28,
-    paddingVertical: 40,
-    backgroundColor: 'rgba(10, 14, 31, 0.3)',
-    borderRadius: 31,
+  card: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    paddingHorizontal: 24,
+    paddingVertical: 32,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 16,
+    elevation: 3,
   },
   footer: {
     alignItems: 'center',
     marginTop: 'auto',
-    gap: 16,
+    gap: 14,
   },
   footerLink: {
     fontSize: 14,
     fontFamily: 'Inter-Regular',
-    color: 'rgba(255, 255, 255, 0.45)',
+    color: '#6B7280',
     textAlign: 'center',
-    letterSpacing: -0.3,
+    letterSpacing: -0.2,
   },
   footerLinkBold: {
     fontFamily: 'Inter-SemiBold',
-    color: 'rgba(255, 255, 255, 0.75)',
-    textDecorationLine: 'underline',
-    textDecorationColor: 'rgba(255, 255, 255, 0.3)',
+    color: '#2563EB',
   },
   helpButton: {
-    paddingVertical: 6,
+    paddingVertical: 4,
   },
   helpText: {
     fontSize: 13,
     fontFamily: 'Inter-Medium',
-    color: 'rgba(255, 255, 255, 0.4)',
+    color: '#9CA3AF',
     textAlign: 'center',
-    letterSpacing: -0.2,
+    letterSpacing: -0.1,
   },
 });

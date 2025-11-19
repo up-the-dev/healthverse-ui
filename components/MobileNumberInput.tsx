@@ -21,23 +21,23 @@ export default function MobileNumberInput({ value, onChangeText, error, onSubmit
       <MotiView
         animate={{
           borderColor: error
-            ? 'rgba(255, 107, 107, 0.6)'
+            ? '#EF4444'
             : isFocused
-            ? 'rgba(183, 148, 246, 0.4)'
-            : 'rgba(255, 255, 255, 0.08)',
-          shadowOpacity: isFocused ? 0.2 : 0,
+            ? '#2563EB'
+            : '#E5E7EB',
+          shadowOpacity: isFocused ? 0.08 : 0,
         }}
         transition={{
           type: 'timing',
-          duration: 250,
+          duration: 200,
         }}
         style={[styles.inputContainer, isFocused && styles.inputFocused]}
       >
         <View style={styles.iconWrapper}>
           <Phone
-            size={18}
-            color={isFocused ? '#b794f6' : hasValue ? 'rgba(255, 255, 255, 0.7)' : 'rgba(255, 255, 255, 0.3)'}
-            strokeWidth={1.8}
+            size={20}
+            color={isFocused ? '#2563EB' : hasValue ? '#4B5563' : '#9CA3AF'}
+            strokeWidth={2}
           />
         </View>
 
@@ -57,13 +57,13 @@ export default function MobileNumberInput({ value, onChangeText, error, onSubmit
               styles.label,
               (hasValue || isFocused) && styles.labelFloating,
               isFocused && styles.labelFocused,
+              error && styles.labelError,
             ]}>
               Mobile Number
             </Text>
           </MotiView>
 
           <View style={styles.inputRow}>
-            <Text style={styles.countryCode}>+91</Text>
             <TextInput
               style={styles.input}
               value={value}
@@ -74,9 +74,9 @@ export default function MobileNumberInput({ value, onChangeText, error, onSubmit
               onBlur={() => setIsFocused(false)}
               onSubmitEditing={onSubmit}
               returnKeyType="done"
-              selectionColor="rgba(183, 148, 246, 0.5)"
+              selectionColor="#2563EB"
               placeholder="0000000000"
-              placeholderTextColor="rgba(255, 255, 255, 0.15)"
+              placeholderTextColor="#D1D5DB"
             />
           </View>
         </View>
@@ -124,99 +124,95 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.04)',
-    borderRadius: 18,
-    borderWidth: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 18,
-    minHeight: 68,
-    shadowColor: '#b794f6',
+    backgroundColor: '#F9FAFB',
+    borderRadius: 14,
+    borderWidth: 1.5,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    minHeight: 64,
+    shadowColor: '#2563EB',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0,
-    shadowRadius: 12,
+    shadowRadius: 8,
     elevation: 0,
   },
   inputFocused: {
-    elevation: 6,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    elevation: 2,
+    backgroundColor: '#FFFFFF',
   },
   iconWrapper: {
-    marginRight: 16,
+    marginRight: 14,
     alignItems: 'center',
     justifyContent: 'center',
   },
   inputWrapper: {
     flex: 1,
     justifyContent: 'center',
-    height: 56,
+    height: 52,
   },
   labelContainer: {
     position: 'absolute',
     left: 0,
-    top: 12,
+    top: 10,
   },
   label: {
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: 'Inter-Regular',
-    color: 'rgba(255, 255, 255, 0.4)',
-    letterSpacing: -0.3,
+    color: '#9CA3AF',
+    letterSpacing: -0.2,
   },
   labelFloating: {
-    fontSize: 12,
-    fontFamily: 'Inter-Medium',
-    color: 'rgba(255, 255, 255, 0.5)',
+    fontSize: 11,
+    fontFamily: 'Inter-SemiBold',
+    color: '#6B7280',
   },
   labelFocused: {
-    color: '#b794f6',
+    color: '#2563EB',
+  },
+  labelError: {
+    color: '#EF4444',
   },
   inputRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    height: 56,
-  },
-  countryCode: {
-    fontSize: 16,
-    fontFamily: 'DMSans-Medium',
-    color: 'rgba(255, 255, 255, 0.85)',
-    marginRight: 8,
-    letterSpacing: -0.2,
+    height: 52,
   },
   input: {
     flex: 1,
     fontSize: 16,
-    fontFamily: 'DMSans-Medium',
-    color: '#FFFFFF',
-    letterSpacing: 0.2,
+    fontFamily: 'Inter-SemiBold',
+    color: '#1F2937',
+    letterSpacing: 0.3,
     padding: 0,
     lineHeight: 24,
   },
   checkmark: {
-    marginLeft: 8,
+    marginLeft: 10,
   },
   checkmarkCircle: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: 'rgba(138, 202, 160, 0.15)',
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    backgroundColor: '#DCFCE7',
     borderWidth: 1.5,
-    borderColor: 'rgba(138, 202, 160, 0.8)',
+    borderColor: '#10B981',
     alignItems: 'center',
     justifyContent: 'center',
   },
   checkmarkText: {
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: '700',
-    color: 'rgba(138, 202, 160, 1)',
+    color: '#10B981',
   },
   errorContainer: {
     marginTop: 8,
-    paddingLeft: 4,
+    paddingLeft: 2,
   },
   errorText: {
     fontSize: 12,
-    fontWeight: '500',
-    color: 'rgba(255, 107, 107, 0.9)',
-    letterSpacing: -0.2,
+    fontFamily: 'Inter-Medium',
+    color: '#EF4444',
+    letterSpacing: -0.1,
   },
 });
