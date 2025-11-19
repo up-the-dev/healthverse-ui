@@ -45,7 +45,7 @@ export default function OnboardingScreen() {
   };
 
   const handleComplete = () => {
-    router.push('/entry');
+    router.push('/login');
   };
 
   return (

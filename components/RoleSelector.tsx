@@ -19,7 +19,7 @@ const roles: { id: Role; label: string; icon: typeof User }[] = [
 export default function RoleSelector({ selectedRole, onSelectRole }: RoleSelectorProps) {
   return (
     <View style={styles.container}>
-      {roles.map((role, index) => {
+      {roles.map((role) => {
         const Icon = role.icon;
         const isSelected = selectedRole === role.id;
 
@@ -27,43 +27,22 @@ export default function RoleSelector({ selectedRole, onSelectRole }: RoleSelecto
           <TouchableOpacity
             key={role.id}
             onPress={() => onSelectRole(role.id)}
-            activeOpacity={0.7}
+            activeOpacity={0.6}
           >
             <MotiView
-              from={{ opacity: 0, translateY: 20 }}
               animate={{
-                opacity: 1,
-                translateY: 0,
-                scale: isSelected ? 1.05 : 1,
+                backgroundColor: isSelected ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.04)',
+                borderColor: isSelected ? 'rgba(255, 255, 255, 0.2)' : 'rgba(255, 255, 255, 0.08)',
               }}
               transition={{
-                type: 'spring',
-                damping: 15,
-                stiffness: 150,
-                delay: index * 100,
+                type: 'timing',
+                duration: 200,
               }}
-              style={[
-                styles.chip,
-                isSelected && styles.chipSelected,
-              ]}
+              style={styles.chip}
             >
-              {isSelected && (
-                <MotiView
-                  from={{ opacity: 0 }}
-                  animate={{ opacity: 0.15 }}
-                  transition={{
-                    type: 'timing',
-                    duration: 1500,
-                    loop: true,
-                    repeatReverse: true,
-                  }}
-                  style={styles.chipGlow}
-                />
-              )}
-
               <Icon
-                size={18}
-                color={isSelected ? '#00F5FF' : 'rgba(255, 255, 255, 0.5)'}
+                size={16}
+                color={isSelected ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.4)'}
                 strokeWidth={2}
               />
               <Text style={[styles.chipText, isSelected && styles.chipTextSelected]}>
@@ -80,44 +59,26 @@ export default function RoleSelector({ selectedRole, onSelectRole }: RoleSelecto
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    gap: 12,
+    gap: 10,
     marginBottom: 32,
   },
   chip: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 24,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    gap: 6,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 12,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.1)',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  chipSelected: {
-    backgroundColor: 'rgba(0, 245, 255, 0.1)',
-    borderColor: 'rgba(0, 245, 255, 0.4)',
-    shadowColor: '#00F5FF',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 12,
-  },
-  chipGlow: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#00F5FF',
   },
   chipText: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: 'rgba(255, 255, 255, 0.6)',
-    letterSpacing: 0.3,
+    fontSize: 14,
+    fontWeight: '500',
+    color: 'rgba(255, 255, 255, 0.5)',
+    letterSpacing: -0.2,
   },
   chipTextSelected: {
-    color: '#FFFFFF',
-    fontWeight: '700',
+    color: 'rgba(255, 255, 255, 0.9)',
+    fontWeight: '600',
   },
 });
