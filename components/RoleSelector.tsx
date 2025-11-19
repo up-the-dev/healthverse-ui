@@ -32,19 +32,19 @@ export default function RoleSelector({ selectedRole, onSelectRole }: RoleSelecto
           >
             <MotiView
               animate={{
-                backgroundColor: isSelected ? 'rgba(0, 245, 255, 0.12)' : 'rgba(255, 255, 255, 0.03)',
-                borderColor: isSelected ? 'rgba(0, 245, 255, 0.4)' : 'rgba(255, 255, 255, 0.08)',
+                backgroundColor: isSelected ? 'rgba(183, 148, 246, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                borderColor: isSelected ? 'rgba(183, 148, 246, 0.4)' : 'rgba(255, 255, 255, 0.08)',
                 scale: isSelected ? 1 : 1,
               }}
               transition={{
                 type: 'timing',
-                duration: 200,
+                duration: 250,
               }}
               style={styles.chip}
             >
               <Icon
                 size={15}
-                color={isSelected ? '#00F5FF' : 'rgba(255, 255, 255, 0.4)'}
+                color={isSelected ? '#b794f6' : 'rgba(255, 255, 255, 0.4)'}
                 strokeWidth={1.8}
               />
               <Text style={[styles.chipText, isSelected && styles.chipTextSelected]} allowFontScaling={false}>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.3,
   },
   chipTextSelected: {
-    color: '#00F5FF',
+    color: '#b794f6',
     fontFamily: 'Inter-SemiBold',
   },
 });

@@ -43,7 +43,7 @@ export default function PremiumHealthIcon() {
         style={styles.iconWrapper}
       >
         <LinearGradient
-          colors={['rgba(0, 245, 255, 0.12)', 'rgba(0, 139, 255, 0.08)']}
+          colors={['rgba(138, 102, 208, 0.12)', 'rgba(72, 61, 139, 0.08)']}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.gradientCircle}
@@ -51,7 +51,7 @@ export default function PremiumHealthIcon() {
           <View style={styles.iconBorder}>
             <View style={styles.iconInner}>
               <View style={styles.heartIconWrapper}>
-                <Heart size={32} color="#00F5FF" strokeWidth={1.5} fill="rgba(0, 245, 255, 0.15)" />
+                <Heart size={32} color="#b794f6" strokeWidth={1.5} fill="rgba(183, 148, 246, 0.15)" />
               </View>
 
               <MotiView
@@ -65,12 +65,12 @@ export default function PremiumHealthIcon() {
                 style={styles.activityBadge}
               >
                 <LinearGradient
-                  colors={['rgba(10, 14, 39, 0.95)', 'rgba(15, 22, 51, 0.95)']}
+                  colors={['rgba(10, 14, 31, 0.95)', 'rgba(26, 21, 53, 0.95)']}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
                   style={styles.badgeGradient}
                 >
-                  <Activity size={14} color="#00F5FF" strokeWidth={2} />
+                  <Activity size={14} color="#b794f6" strokeWidth={2} />
                 </LinearGradient>
               </MotiView>
             </View>
@@ -93,14 +93,14 @@ const styles = StyleSheet.create({
     width: 140,
     height: 140,
     borderRadius: 70,
-    backgroundColor: 'rgba(0, 245, 255, 0.15)',
+    backgroundColor: 'rgba(138, 102, 208, 0.15)',
   },
   glowMiddle: {
     position: 'absolute',
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: 'rgba(0, 245, 255, 0.2)',
+    backgroundColor: 'rgba(138, 102, 208, 0.2)',
   },
   iconWrapper: {
     width: 100,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 50,
     borderWidth: 1,
-    borderColor: 'rgba(0, 245, 255, 0.3)',
+    borderColor: 'rgba(183, 148, 246, 0.3)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -141,8 +141,8 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: 'rgba(0, 245, 255, 0.4)',
-    shadowColor: '#00F5FF',
+    borderColor: 'rgba(183, 148, 246, 0.4)',
+    shadowColor: '#8a66d0',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
