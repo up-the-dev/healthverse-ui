@@ -51,7 +51,7 @@ export default function OnboardingScreen() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={['#0A0E27', '#1a1f3a', '#0A0E27']}
+        colors={['#FFFFFF', '#F0F9FF', '#E0F2FE']}
         style={styles.gradient}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -110,7 +110,7 @@ export default function OnboardingScreen() {
           activeOpacity={0.8}
         >
           <LinearGradient
-            colors={['#00F5FF', '#00B8D4']}
+            colors={['#3b82f6', '#2563eb']}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
             style={styles.buttonGradient}
@@ -139,7 +139,7 @@ export default function OnboardingScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0A0E27',
+    backgroundColor: '#FFFFFF',
   },
   gradient: {
     position: 'absolute',
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
   skipText: {
     fontSize: 16,
     fontWeight: '600',
-    color: 'rgba(255, 255, 255, 0.6)',
+    color: 'rgba(0, 0, 0, 0.5)',
   },
   scrollView: {
     flex: 1,
@@ -183,10 +183,10 @@ const styles = StyleSheet.create({
   dot: {
     height: 8,
     borderRadius: 4,
-    backgroundColor: '#00F5FF',
+    backgroundColor: '#3b82f6',
   },
   dotActive: {
-    backgroundColor: '#00F5FF',
+    backgroundColor: '#3b82f6',
   },
   nextButton: {
     width: '100%',
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 20,
     overflow: 'hidden',
-    shadowColor: '#00F5FF',
+    shadowColor: '#3b82f6',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.4,
     shadowRadius: 16,
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
   nextButtonText: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#0A0E27',
+    color: '#FFFFFF',
     letterSpacing: 0.5,
   },
 });

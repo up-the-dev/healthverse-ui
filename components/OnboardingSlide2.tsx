@@ -33,7 +33,7 @@ export default function OnboardingSlide2() {
                 ]}
               >
                 <View style={styles.iconWrapper}>
-                  <Icon size={32} color="#00F5FF" strokeWidth={2} />
+                  <Icon size={32} color="#10b981" strokeWidth={2} />
                 </View>
               </MotiView>
             );
@@ -78,27 +78,27 @@ const styles = StyleSheet.create({
     width: 90,
     height: 120,
     borderRadius: 24,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    backgroundColor: '#FFFFFF',
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.1)',
+    borderColor: 'rgba(0, 0, 0, 0.06)',
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#00F5FF',
+    shadowColor: '#10b981',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.15,
     shadowRadius: 20,
   },
   cardCenter: {
     height: 140,
-    backgroundColor: 'rgba(0, 245, 255, 0.08)',
-    borderColor: 'rgba(0, 245, 255, 0.3)',
+    backgroundColor: 'rgba(16, 185, 129, 0.08)',
+    borderColor: 'rgba(16, 185, 129, 0.3)',
     transform: [{ translateY: -10 }],
   },
   iconWrapper: {
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: 'rgba(0, 245, 255, 0.1)',
+    backgroundColor: 'rgba(16, 185, 129, 0.1)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#1a1a2e',
     textAlign: 'center',
     marginBottom: 16,
     letterSpacing: -0.5,
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 17,
     fontWeight: '400',
-    color: 'rgba(255, 255, 255, 0.65)',
+    color: '#6b7280',
     textAlign: 'center',
     lineHeight: 26,
   },
