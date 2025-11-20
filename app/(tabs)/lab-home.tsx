@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MotiView } from 'moti';
-import { FlaskConical, FileText, Clock, CheckCircle2, Bell, Settings } from 'lucide-react-native';
+import { FlaskConical, FileText, Clock, CheckCircle2, Bell, Settings, Home, Search, Calendar, User } from 'lucide-react-native';
 
 export default function LabHomeScreen() {
   const stats = [
@@ -148,6 +148,34 @@ export default function LabHomeScreen() {
           </View>
         </MotiView>
       </ScrollView>
+
+      <View style={styles.bottomNav}>
+        <View style={styles.navContainer}>
+          <TouchableOpacity style={styles.navButton} activeOpacity={0.7}>
+            <View style={[styles.navButtonInner, styles.navButtonActive]}>
+              <Home size={24} color="#ffffff" strokeWidth={2} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navButton} activeOpacity={0.7}>
+            <View style={styles.navButtonInner}>
+              <Search size={24} color="#94a3b8" strokeWidth={2} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navButton} activeOpacity={0.7}>
+            <View style={styles.navButtonInner}>
+              <Calendar size={24} color="#94a3b8" strokeWidth={2} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navButton} activeOpacity={0.7}>
+            <View style={styles.navButtonInner}>
+              <User size={24} color="#94a3b8" strokeWidth={2} />
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
@@ -167,7 +195,7 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingHorizontal: 24,
     paddingTop: 60,
-    paddingBottom: 40,
+    paddingBottom: 120,
   },
   header: {
     flexDirection: 'row',
@@ -338,5 +366,47 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: 'Inter-SemiBold',
     color: '#ffffff',
+  },
+  bottomNav: {
+    position: 'absolute',
+    bottom: 24,
+    left: 24,
+    right: 24,
+    alignItems: 'center',
+  },
+  navContainer: {
+    flexDirection: 'row',
+    backgroundColor: 'rgba(20, 28, 45, 0.95)',
+    borderRadius: 28,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    gap: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(148, 163, 184, 0.15)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 16,
+    elevation: 16,
+  },
+  navButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  navButtonInner: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    backgroundColor: 'rgba(148, 163, 184, 0.1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  navButtonActive: {
+    backgroundColor: '#f59e0b',
+    shadowColor: '#f59e0b',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 8,
   },
 });
