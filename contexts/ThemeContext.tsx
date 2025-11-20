@@ -73,13 +73,13 @@ export const lightTheme = {
 export const darkTheme = {
   background: ['#1a1f2e', '#252d3d', '#2d3748'],
   containerBg: '#1a1f2e',
-  cardBg: 'rgba(22, 27, 34, 0.9)',
+  cardBg: 'rgba(37, 45, 61, 0.9)',
   cardBorder: 'rgba(48, 161, 224, 0.25)',
   text: '#ffffff',
   textSecondary: '#e6edf3',
   textTertiary: '#8b949e',
-  iconButton: 'rgba(30, 161, 224, 0.15)',
+  iconButton: 'rgba(37, 45, 61, 0.9)',
   iconButtonBorder: 'rgba(48, 161, 224, 0.3)',
-  navBg: 'rgba(22, 27, 34, 0.95)',
-  navInactive: 'rgba(39, 47, 57, 0.8)',
+  navBg: 'rgba(37, 45, 61, 0.95)',
+  navInactive: 'rgba(52, 63, 82, 0.8)',
 };
