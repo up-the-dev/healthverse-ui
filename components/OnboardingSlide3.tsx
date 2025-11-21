@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 import { MotiView } from 'moti';
-import { Brain, Lock, Sparkles } from 'lucide-react-native';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -19,67 +18,46 @@ export default function OnboardingSlide3() {
   return (
     <View style={styles.container}>
       <MotiView
-        from={{ opacity: 0, scale: 0.9, rotateY: '15deg' }}
-        animate={{ opacity: 1, scale: 1, rotateY: '0deg' }}
-        transition={{
-          type: 'spring',
-          damping: 15,
-          stiffness: 80,
-          delay: 200,
-        }}
+        from={{ opacity: 0, translateY: -30 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        transition={{ type: 'timing', duration: 800, delay: 200 }}
         style={styles.heroContainer}
       >
-        <View style={styles.mainCard}>
-          <MotiView
-            from={{ scale: 0, rotate: '-180deg' }}
-            animate={{ scale: 1, rotate: '0deg' }}
-            transition={{
-              type: 'spring',
-              damping: 12,
-              stiffness: 100,
-              delay: 400,
-            }}
-            style={styles.brainIconWrapper}
-          >
-            <Brain size={iconSize} color="#f59e0b" strokeWidth={1.5} />
-          </MotiView>
-
-          <MotiView
-            from={{ opacity: 0, translateX: -20 }}
-            animate={{ opacity: 1, translateX: 0 }}
-            transition={{ delay: 600, duration: 400 }}
-            style={[styles.badge, styles.badgeLeft]}
-          >
-            <Lock size={badgeIconSize} color="#f59e0b" strokeWidth={2} />
-          </MotiView>
-
-          <MotiView
-            from={{ opacity: 0, translateX: 20 }}
-            animate={{ opacity: 1, translateX: 0 }}
-            transition={{ delay: 700, duration: 400 }}
-            style={[styles.badge, styles.badgeRight]}
-          >
-            <Sparkles size={badgeIconSize} color="#f59e0b" strokeWidth={2} />
-          </MotiView>
-        </View>
+        <MotiView
+          from={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: 'spring',
+            damping: 15,
+            stiffness: 100,
+            delay: 400,
+          }}
+          style={styles.imageContainer}
+        >
+          <Image
+            source={require('../assets/images/Gemini_Generated_Image_sqa168sqa168sqa1.png')}
+            style={styles.brainImage}
+            resizeMode="cover"
+          />
+        </MotiView>
 
         <MotiView
-          from={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.2, scale: 1.3 }}
+          from={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.15, scale: 1.2 }}
           transition={{
             type: 'timing',
-            duration: 2500,
+            duration: 2000,
             loop: true,
             repeatReverse: true,
           }}
-          style={styles.glowEffect}
+          style={styles.glowCircle}
         />
       </MotiView>
 
       <MotiView
         from={{ opacity: 0, translateY: 30 }}
         animate={{ opacity: 1, translateY: 0 }}
-        transition={{ type: 'timing', duration: 600, delay: 800 }}
+        transition={{ type: 'timing', duration: 600, delay: 1000 }}
         style={styles.textContainer}
       >
         <Text style={styles.title}>Smart & Private</Text>
@@ -91,13 +69,9 @@ export default function OnboardingSlide3() {
   );
 }
 
-const cardSize = getResponsiveSize(160, 180, 200);
-const iconWrapperSize = getResponsiveSize(80, 90, 100);
-const badgeSize = getResponsiveSize(36, 40, 44);
-const iconSize = getResponsiveSize(44, 50, 56);
-const badgeIconSize = getResponsiveSize(14, 15, 16);
-const glowSize = getResponsiveSize(220, 250, 280);
-const heroHeight = isShortScreen ? getResponsiveSize(200, 230, 260) : getResponsiveSize(240, 260, 280);
+const imageSize = getResponsiveSize(200, 240, 280);
+const glowSize = getResponsiveSize(240, 280, 340);
+const heroHeight = isShortScreen ? getResponsiveSize(240, 280, 320) : getResponsiveSize(280, 320, 360);
 
 const styles = StyleSheet.create({
   container: {
@@ -112,53 +86,27 @@ const styles = StyleSheet.create({
     marginBottom: isShortScreen ? 40 : 60,
     height: heroHeight,
   },
-  mainCard: {
-    width: cardSize,
-    height: cardSize,
-    borderRadius: getResponsiveSize(20, 24, 28),
+  imageContainer: {
+    width: imageSize,
+    height: imageSize,
+    borderRadius: 20,
+    overflow: 'hidden',
     backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderColor: 'rgba(245, 158, 11, 0.2)',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: isSmallScreen ? 3 : 4,
+    borderColor: 'rgba(245, 158, 11, 0.35)',
     shadowColor: '#f59e0b',
     shadowOffset: { width: 0, height: isSmallScreen ? 8 : 12 },
-    shadowOpacity: 0.25,
-    shadowRadius: isSmallScreen ? 20 : 24,
-    position: 'relative',
+    shadowOpacity: 0.3,
+    shadowRadius: isSmallScreen ? 16 : 20,
+    elevation: 12,
   },
-  brainIconWrapper: {
-    width: iconWrapperSize,
-    height: iconWrapperSize,
-    borderRadius: iconWrapperSize / 2,
-    backgroundColor: 'rgba(245, 158, 11, 0.08)',
-    alignItems: 'center',
-    justifyContent: 'center',
+  brainImage: {
+    width: '100%',
+    height: '100%',
   },
-  badge: {
-    position: 'absolute',
-    width: badgeSize,
-    height: badgeSize,
-    borderRadius: badgeSize / 2,
-    backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderColor: 'rgba(245, 158, 11, 0.3)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: '#f59e0b',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-  },
-  badgeLeft: {
-    left: getResponsiveSize(-8, -9, -10),
-    top: getResponsiveSize(30, 35, 40),
-  },
-  badgeRight: {
-    right: getResponsiveSize(-8, -9, -10),
-    bottom: getResponsiveSize(30, 35, 40),
-  },
-  glowEffect: {
+  glowCircle: {
     position: 'absolute',
     width: glowSize,
     height: glowSize,
