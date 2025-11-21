@@ -17,6 +17,9 @@ export default function TabLayout() {
       <Tabs.Screen name="patient-home" />
       <Tabs.Screen name="profile" />
       <Tabs.Screen name="doctor-home" />
+      <Tabs.Screen name="doctor-patient-profile" />
+      <Tabs.Screen name="doctor-appointments" />
+      <Tabs.Screen name="doctor-profile" />
       <Tabs.Screen name="lab-home" />
       <Tabs.Screen name="timeline" />
       <Tabs.Screen name="upload-document" />
