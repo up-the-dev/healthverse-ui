@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MotiView } from 'moti';
@@ -13,9 +13,14 @@ export default function SuccessConfirmationScreen() {
   const { isDark } = useTheme();
   const colors = isDark ? darkTheme : lightTheme;
   const { getRequestById } = useLabRequests();
+  const scrollViewRef = useRef<ScrollView>(null);
 
   const requestId = params.requestId ? parseInt(params.requestId as string) : null;
   const request = requestId ? getRequestById(requestId) : null;
+
+  useEffect(() => {
+    scrollViewRef.current?.scrollTo({ y: 0, animated: false });
+  }, []);
 
   if (!request) {
     return (
@@ -33,7 +38,7 @@ export default function SuccessConfirmationScreen() {
     <View style={[styles.container, { backgroundColor: colors.containerBg }]}>
       <LinearGradient colors={colors.background} style={styles.gradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} />
 
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+      <ScrollView ref={scrollViewRef} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <MotiView
           from={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
