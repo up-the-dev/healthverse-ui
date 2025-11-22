@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  FlatList,
-} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Upload } from 'lucide-react-native';
 import { MotiView } from 'moti';
@@ -98,6 +92,10 @@ export function DocumentTimeline3D({
     );
   }
 
+  const sortedDocuments = [...documents].sort(
+    (a, b) => b.timestamp - a.timestamp,
+  );
+
   return (
     <View
       style={[
@@ -105,40 +103,33 @@ export function DocumentTimeline3D({
         { backgroundColor: colors.cardBg, borderColor: colors.cardBorder },
       ]}
     >
-      <FlatList
-        data={[...documents].sort((a, b) => b.timestamp - a.timestamp)}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.item}
-            onPress={() => onViewDocument(item)}
-            activeOpacity={0.8}
-          >
-            <Text style={[styles.emoji, { color: colors.text }]}>
-              {getDocumentEmoji(item.type)}
-            </Text>
-            <View style={styles.info}>
-              <Text
-                style={[styles.title, { color: colors.text }]}
-                numberOfLines={1}
-              >
-                {item.title}
+      <View style={{ padding: 12 }}>
+        {sortedDocuments.map((item, index) => (
+          <View key={item.id}>
+            <TouchableOpacity
+              style={styles.item}
+              onPress={() => onViewDocument(item)}
+              activeOpacity={0.8}
+            >
+              <Text style={[styles.emoji, { color: colors.text }]}>
+                {getDocumentEmoji(item.type)}
               </Text>
-              <Text style={[styles.date, { color: colors.textTertiary }]}>
-                {item.date}
-              </Text>
-            </View>
-          </TouchableOpacity>
-        )}
-        ItemSeparatorComponent={() => <View style={styles.sep} />}
-        contentContainerStyle={{ padding: 12 }}
-        // Make FlatList more tolerant when used inside other scrollable parents.
-        nestedScrollEnabled={true}
-        initialNumToRender={8}
-        maxToRenderPerBatch={12}
-        windowSize={7}
-        removeClippedSubviews={false}
-      />
+              <View style={styles.info}>
+                <Text
+                  style={[styles.title, { color: colors.text }]}
+                  numberOfLines={1}
+                >
+                  {item.title}
+                </Text>
+                <Text style={[styles.date, { color: colors.textTertiary }]}>
+                  {item.date}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            {index < sortedDocuments.length - 1 && <View style={styles.sep} />}
+          </View>
+        ))}
+      </View>
 
       <TouchableOpacity
         onPress={onUpload}
