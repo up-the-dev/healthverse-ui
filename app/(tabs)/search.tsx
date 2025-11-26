@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { View, StyleSheet, Platform, StatusBar } from 'react-native';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useTheme, lightTheme, darkTheme } from '../../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 import SearchBar from '../../components/SearchBar';
 import DoctorResultsList from '../../components/DoctorResultsList';
 import EmptySearchState from '../../components/EmptySearchState';

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MotiView } from 'moti';
 import { SearchX } from 'lucide-react-native';
-import { useTheme, lightTheme, darkTheme } from '../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 
 interface EmptySearchStateProps {
   message?: string;

@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { MotiView } from 'moti';
 import { CheckCircle } from 'lucide-react-native';
-import { useTheme, lightTheme, darkTheme } from '../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 import { DoctorCardData } from './DoctorCard';
 
 interface AppointmentConfirmationProps {

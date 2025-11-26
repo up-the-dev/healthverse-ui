@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import DoctorProfileView from '../../components/DoctorProfileView';
 import { mockDoctors } from '../../data/mockDoctors';
-import { useTheme, lightTheme, darkTheme } from '../../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 
 export default function DoctorProfileDetailScreen() {
   const { isDark } = useTheme();

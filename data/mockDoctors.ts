@@ -75,7 +75,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.8,
     distance: '1.2 km',
     reviewCount: 345,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
+    image: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
   },
   {
     id: '2',
@@ -85,7 +85,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.7,
     distance: '2.1 km',
     reviewCount: 289,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
+    image: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
   },
   {
     id: '3',
@@ -95,7 +95,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.9,
     distance: '0.8 km',
     reviewCount: 512,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
+    image: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
   },
   {
     id: '4',
@@ -105,7 +105,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.6,
     distance: '3.4 km',
     reviewCount: 256,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
+    image: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
   },
   {
     id: '5',
@@ -115,7 +115,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.5,
     distance: '1.9 km',
     reviewCount: 178,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
+    image: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
   },
   {
     id: '6',
@@ -125,7 +125,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.9,
     distance: '4.2 km',
     reviewCount: 193,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
+    image: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
   },
   {
     id: '7',
@@ -135,7 +135,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.8,
     distance: '2.6 km',
     reviewCount: 367,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
+    image: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
   },
   {
     id: '8',
@@ -145,7 +145,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.6,
     distance: '1.5 km',
     reviewCount: 224,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
+    image: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
   },
   {
     id: '9',
@@ -155,7 +155,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.7,
     distance: '3.1 km',
     reviewCount: 301,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
+    image: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
   },
   {
     id: '10',
@@ -165,7 +165,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.8,
     distance: '2.8 km',
     reviewCount: 423,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
+    image: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
   },
   {
     id: '11',
@@ -175,7 +175,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.5,
     distance: '3.9 km',
     reviewCount: 167,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
+    image: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
   },
   {
     id: '12',
@@ -185,7 +185,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.6,
     distance: '2.3 km',
     reviewCount: 195,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
+    image: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
   },
   {
     id: '13',
@@ -195,7 +195,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.7,
     distance: '1.7 km',
     reviewCount: 278,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
+    image: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
   },
   {
     id: '14',
@@ -205,7 +205,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.9,
     distance: '0.9 km',
     reviewCount: 456,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
+    image: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
   },
   {
     id: '15',
@@ -215,7 +215,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.6,
     distance: '4.5 km',
     reviewCount: 189,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
+    image: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
   },
   {
     id: '16',
@@ -225,7 +225,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.8,
     distance: '2.2 km',
     reviewCount: 312,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
+    image: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
   },
   {
     id: '17',
@@ -235,7 +235,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.9,
     distance: '5.3 km',
     reviewCount: 234,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
+    image: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
   },
   {
     id: '18',
@@ -245,7 +245,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.7,
     distance: '3.6 km',
     reviewCount: 201,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
+    image: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
   },
   {
     id: '19',
@@ -255,7 +255,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.8,
     distance: '1.4 km',
     reviewCount: 289,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
+    image: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
   },
   {
     id: '20',
@@ -265,7 +265,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.6,
     distance: '2.9 km',
     reviewCount: 267,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
+    image: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
   },
   {
     id: '21',
@@ -275,7 +275,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.5,
     distance: '1.1 km',
     reviewCount: 398,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
+    image: require('../assets/images/Gemini_Generated_Image_g7c9efg7c9efg7c9.png'),
   },
   {
     id: '22',
@@ -285,7 +285,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.9,
     distance: '0.7 km',
     reviewCount: 441,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
+    image: require('../assets/images/Gemini_Generated_Image_264ied264ied264i.png'),
   },
   {
     id: '23',
@@ -295,7 +295,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.7,
     distance: '4.8 km',
     reviewCount: 176,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
+    image: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
   },
   {
     id: '24',
@@ -305,7 +305,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.8,
     distance: '2.4 km',
     reviewCount: 334,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
+    image: require('../assets/images/Gemini_Generated_Image_yfsoo9yfsoo9yfso.png'),
   },
   {
     id: '25',
@@ -315,7 +315,7 @@ export const mockDoctors: DoctorCardData[] = [
     rating: 4.6,
     distance: '3.2 km',
     reviewCount: 278,
-    photoUrl: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
+    image: require('../assets/images/Gemini_Generated_Image_qnnooiqnnooiqnno.png'),
   },
 ];
 

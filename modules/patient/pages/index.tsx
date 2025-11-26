@@ -293,7 +293,11 @@ export default function PatientHomeScreen() {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.navButton} activeOpacity={0.7}>
+          <TouchableOpacity
+            onPress={() => router.push('/(tabs)/search')}
+            style={styles.navButton}
+            activeOpacity={0.7}
+          >
             <View
               style={[
                 styles.navButtonInner,
