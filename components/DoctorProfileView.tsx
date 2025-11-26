@@ -12,7 +12,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { MotiView } from 'moti';
 import { ChevronLeft, Share2, MessageCircle, Star } from 'lucide-react-native';
-import { useTheme, lightTheme, darkTheme } from '../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 import { DoctorCardData } from './DoctorCard';
 import AppointmentBooking from './AppointmentBooking';
 import AppointmentConfirmation from './AppointmentConfirmation';
@@ -144,7 +144,7 @@ export default function DoctorProfileView({ doctor, onBack }: DoctorProfileViewP
           <View style={[styles.profileCard, { backgroundColor: colors.cardBg }]}>
             <View style={styles.profileImageContainer}>
               <Image
-                source={{ uri: doctor.photoUrl }}
+                source={doctor.image}
                 style={styles.profileImage}
               />
               <View style={styles.ratingBadge}>

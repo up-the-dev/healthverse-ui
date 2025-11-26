@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MotiView } from 'moti';
 import { MapPin, Star } from 'lucide-react-native';
-import { useTheme, lightTheme, darkTheme } from '../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 
 export interface DoctorCardData {
   id: string;
@@ -12,7 +12,7 @@ export interface DoctorCardData {
   hospital: string;
   rating: number;
   distance: string;
-  photoUrl?: string;
+  image?: any;
   reviewCount?: number;
 }
 
@@ -124,9 +124,9 @@ export default function DoctorCard({ doctor, onPress }: DoctorCardProps) {
 
           <View style={styles.cardContent}>
             <View style={styles.leftSection}>
-              {doctor.photoUrl ? (
+              {doctor.image ? (
                 <Image
-                  source={{ uri: doctor.photoUrl }}
+                  source={doctor.image}
                   style={styles.doctorPhoto}
                   resizeMode="cover"
                 />

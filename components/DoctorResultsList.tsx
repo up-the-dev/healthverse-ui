@@ -8,7 +8,7 @@ import {
   Platform,
 } from 'react-native';
 import { MotiView } from 'moti';
-import { useTheme, lightTheme, darkTheme } from '../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 import DoctorCard, { DoctorCardData } from './DoctorCard';
 
 interface DoctorResultsListProps {

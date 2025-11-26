@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity, Animated } from 'react-native';
 import { MotiView } from 'moti';
 import { Search, X, ArrowLeft } from 'lucide-react-native';
-import { useTheme, lightTheme, darkTheme } from '../contexts/ThemeContext';
+import { useTheme, lightTheme, darkTheme } from '@/modules/shared/contexts/ThemeContext';
 
 interface SearchBarProps {
   value: string;
@@ -24,15 +24,15 @@ export default function SearchBar({ value, onChangeText, onClear, onBack, placeh
       transition={{ type: 'timing', duration: 400 }}
       style={styles.container}
     >
-        {onBack && (
-          <TouchableOpacity
-            onPress={onBack}
-            style={[styles.backButton, { backgroundColor: colors.accentLight }]}
-            activeOpacity={0.7}
-          >
-            <ArrowLeft size={20} color={colors.accent} strokeWidth={2} />
-          </TouchableOpacity>
-        )}
+      {onBack && (
+        <TouchableOpacity
+          onPress={onBack}
+          style={[styles.backButton, { backgroundColor: colors.accentLight }]}
+          activeOpacity={0.7}
+        >
+          <ArrowLeft size={20} color={colors.accent} strokeWidth={2} />
+        </TouchableOpacity>
+      )}
 
       <View
         style={[
@@ -40,7 +40,7 @@ export default function SearchBar({ value, onChangeText, onClear, onBack, placeh
           { backgroundColor: colors.cardBg, borderColor: isFocused ? colors.accent : colors.cardBorder },
         ]}
       >
-      
+
         <View style={[styles.iconWrapper, { backgroundColor: colors.accentLight }]}>
           <Search size={20} color={colors.accent} strokeWidth={2} />
         </View>
